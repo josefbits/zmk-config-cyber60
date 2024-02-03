@@ -66,7 +66,7 @@
 &bt BT_CLR   &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp UP      &trans        &trans        &kp HOME   &kp END  &trans
 &bootloader  &trans  &trans  &trans        &trans        &trans        &trans        &kp LEFT      &kp DOWN    &kp RIGHT     &trans        &kp PG_UP  &trans   &trans
 &trans       &trans  &trans  &trans        &trans        &trans        &trans        &trans        &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp PG_DN  &trans   &trans
-&trans       &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans      &trans
+&trans       &trans  &trans  &trans        &trans        &trans        &trans        &trans        &kp LWIN    &trans
 &none
             >;
         };
