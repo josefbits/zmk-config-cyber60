@@ -27,6 +27,79 @@
             bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_9 &kt LALT &kp KP_NUMLOCK>;
             label = "DE_UE";
         };
+
+        de_ae_uc: de_ae_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_9 &kp KP_NUMBER_6 &kt LEFT_ALT &kp KP_NUMLOCK>;
+            label = "DE_AE_UC";
+        };
+
+        de_oe_uc: de_oe_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_4 &kt LALT &kp KP_NUMLOCK>;
+            label = "DE_OE_UC";
+        };
+
+        de_ue_uc: de_ue_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_0 &kt LALT &kp KP_NUMLOCK>;
+            label = "DE_UE_UC";
+        };
+
+        sv_ao: sv_ao {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_NUMBER_4 &kt LALT &kp KP_NUMLOCK>;
+            label = "SV_AO";
+        };
+
+        sv_ao_uc: sv_ao_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMLOCK &kt LALT &kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_3 &kt LALT &kp KP_NUMLOCK>;
+            label = "SV_AO_UC";
+        };
+    };
+
+    behaviors {
+        de_oe_b: de_oe_b {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DE_OE_B";
+            bindings = <&de_oe>, <&de_oe_uc>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_ae_b: de_ae_b {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DE_AE_B";
+            bindings = <&de_ae>, <&de_ae_uc>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_ue_b: de_ue_b {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DE_UE_B";
+            bindings = <&de_ue>, <&de_ue_uc>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sv_ao_b: sv_ao_b {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SV_AO_B";
+            bindings = <&sv_ao>, <&sv_ao_uc>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -74,11 +147,11 @@
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &de_ue  &trans  &de_oe  &trans  &trans  &trans  &trans
-&trans  &de_ae  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &sv_ao_b  &trans  &trans  &trans  &trans  &trans  &de_ue_b  &trans  &de_oe_b  &trans  &trans  &trans  &trans
+&trans  &de_ae_b  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans
 &trans
             >;
         };
